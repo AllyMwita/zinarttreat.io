@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Menu</title>
+  <style>
+		body {
+			background-color: #efefef;
+			color: #383838;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 36px;
+		}
+
+		form {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		label {
+			font-size: 24px;
+		}
+
+		select {
+			font-size: 18px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #f5f5f5;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			box-shadow: 2px 2px 5px #dcdcdc;
+			color: #383838;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		option {
+			font-size: 16px;
+			color: #383838;
+			background-color: #f5f5f5;
+			font-weight: normal;
+		}
+
+		#sub-options {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Select your Food Item:</h1>
+	<form>
+		<label for="food-type">Choose a category:</label>
+		<select id="food-type" name="food-type">
+			<option value="drinks">Drinks</option>
+			<option value="junks">Junks</option>
+			<option value="meals">Meals</option>
+			<option value="cakes">Cakes</option>
+		</select>
+		<br><br>
+		<div id="sub-options"></div>
+	</form>
+
+	<script>
+		const subOptionsDiv = document.getElementById("sub-options");
+
+		document.getElementById("food-type").addEventListener("change", function() {
+			const selectedValue = this.value;
+			subOptionsDiv.innerHTML = "";
+			if (selectedValue === "drinks") {
+				const subOptions = ["Pineapple Mint Ksh. 120", "Protein Shake Ksh. 200", "Vanilla Shake Ksh. 200", "Oreo Shake Ksh. 240", "Chocolate Shake Ksh. 200", "Coffee Shake Ksh. 240"];
+				const subOptionsSelect = createSelect(subOptions);
+				subOptionsDiv.appendChild(subOptionsSelect);
+			} else if (selectedValue === "junks") {
+				const subOptions = ["Chicken Roll with Side of Chips Ksh. 250", "Beef Roll with Side of Chips Ksh. 250", "Plain Chips Ksh. 150", "Masala Chips Ksh. 230", "Garlic Chips Ksh. 200", "Poussin Chips Ksh. 200", "Maru Bhajia Ksh. 200", "Vegetable Bhajia Ksh. 250", "Beef Samosa Ksh. 60", "Katlesi Ksh. 60", "Mini Pizza Ksh. 250", "Chicken Wings Ksh. 900", "Chicken Skewers Ksh. 250"];
+				const subOptionsSelect = createSelect(subOptions);
+				subOptionsDiv.appendChild(subOptionsSelect);
+			} else if (selectedValue === "meals") {
+				const subOptions = ["Coconut Beans & Rice Ksh. 200", "Chicken Curry & Jeera Rice Ksh. 400", "Chapati & Veg Curry Ksh. 150", "Chinese Rice & Beef Curry Ksh. 350", "Pilau & Kachumbari Ksh. 200", "Chicken Tikka & Naan & Salad Ksh. 350", "Beef Biryani & Salad Ksh. 400", "Chicken Biryani Ksh. 600", "Goat Biryani Ksh. 500", "Naan Ksh. 50", "Mbaazi ya Nazi Ksh. 150"];
+				const subOptionsSelect = createSelect(subOptions);
+				subOptionsDiv.appendChild(subOptionsSelect);
+			} else if (selectedValue === "cakes") {
+				const subOptions = ["Black Forest Ksh. 2,100", "White Forest Ksh. 2,000", "Passion Forest Ksh. 2,000", "Chocolate Fudge Ksh. 2,500", "Funfetti Ksh. 2,100", "Carmel Cake Ksh. 2,200", "Oreo Cake Ksh. 2,200", "Vanilla Cake Ksh. 1,600", "Chocolate Cake Ksh. 1,800", "Strawberry Cake Ksh. 1,700", "Cake Pops Ksh. 1,400", "Cup Cakes Ksh. 1,200", "Muffins Ksh. 1,000", "Camel eye cookies(Ayn Jamal) Ksh. 500", "Date drop Cookies Ksh. 300", "Vanilla sugar Cookies Ksh. 400", "Vishete Ksh. 300"];
+				const subOptionsSelect = createSelect(subOptions);
+				subOptionsDiv.appendChild(subOptionsSelect);
+			}
+		});
+
+		function createSelect(options) {
+			const select = document.createElement("select");
+			options.forEach(function(option) {
+				const optionElement = document.createElement("option");
+				optionElement.value = option;
+				optionElement.text = option;
+				select.appendChild(optionElement);
+			});
+			return select;
+		}
+	</script>
+
+</select>
+        </div>
+        <h2>CONTACT INFORMATION</h2>
+        <P>We'll use thi email to end you detail and updates about your order</P>
+        
+        <form action="https://formsubmit.co/allychachamwita@gmail.com" method="POST">
+            <input type="email" name="Email" placeholder="Email Address" required>
+            <h2> YOUR DETAILS</h2>
+            <p>Enter the address where you want your order delivered</p>
+            <input type="name" name="Name" placeholder="Full Name" required>
+            <input type="name" name="County" placeholder="Nairobi" required>
+            <input type="name" name="Area" placeholder="e.g South C, South B" required>
+            <input type="name" name="Apartment" placeholder="Apartment" required>
+            <h2>PICKUP /DELIVERY OPTION</h2>
+            <P>Local pickup at the restaurant is free.</P>
+            <p>If you want the cake delivered, there is a charge depending on the location.</p> 
+                <p>Kindly contact us on 0729 140 035 for the exact cost.</p>
+            <textarea name="Massage" placeholder="Add a note to your order" required></textarea>
+            <p>By proceeding with your purchase you agree to our Terms and Conditions and Privacy Policy</p>
+
+
+			<div class="banner-btn">
+				<a href="terms.html"><span></span> Terms & Conditions</a>
+			  </div>
+			<hr>
+            
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+    </div>
+
+</body>
+</html>
